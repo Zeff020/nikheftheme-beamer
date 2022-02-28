@@ -1,0 +1,63 @@
+% Nikhef Beamer Theme
+% 
+% (c) Zef Wolffs
+%
+%% This program can be redistributed and/or modified under the terms
+%% of the LaTeX Project Public License Distributed from CTAN archives
+%% in directory macros/latex/base/lppl.txt.
+% 
+%\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{nikheftheme}
+  [2011/01/11 v0.01 LaTeX package for NIKHEF theme]
+
+\RequirePackage{caption}
+
+\definecolor{midnightblue}{HTML}{0c223d}
+
+% Setting frame title textbox to right location
+\makeatletter
+\setbeamertemplate{frametitle}{
+    \ifbeamercolorempty[bg]{frametitle}{}{\nointerlineskip}%
+    \@tempdima=\textwidth%
+    \advance\@tempdima by\beamer@leftmargin%
+    \advance\@tempdima by\beamer@rightmargin%
+    \hspace*{4cm}
+    \begin{beamercolorbox}[sep=0.28cm,wd=\the\@tempdima]{frametitle}
+        \usebeamerfont{frametitle}%
+        \vbox{}\vskip-1ex%
+        \if@tempswa\else\csname beamer@ftecenter\endcsname\fi%
+        \strut\insertframetitle\strut\par%
+        {%
+            \ifx\insertframesubtitle\@empty%
+            \else%
+            {\usebeamerfont{framesubtitle}\usebeamercolor[fg]{framesubtitle}\insertframesubtitle\strut\par}%
+            \fi
+        }%
+        \vskip-1ex%
+        \if@tempswa\else\vskip-.2cm\fi% set inside beamercolorbox... evil here...
+    \end{beamercolorbox}%
+}
+\makeatother
+
+\setbeamercolor{frametitle}{fg=white}
+
+% Setting some colors, fonts, shapes
+\setbeamercolor{title}{fg=white} 
+\setbeamerfont{title}{size=\Huge} 
+\setbeamercolor{author}{fg=white} 
+\setbeamercolor{institute}{fg=white}
+\setbeamercolor{date}{fg=white} 
+\setbeamercolor{itemize item}{fg=midnightblue}
+\setbeamercolor{itemize subitem}{fg=midnightblue}
+\setbeamercolor{itemize subsubitem}{fg=midnightblue}
+\setbeamertemplate{itemize item}[triangle]
+
+% Set default Nikhef background
+\usebackgroundtemplate
+{\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{theme/background.pdf}}
+
+\captionsetup{justification=centering}
+
+\endinput
+%%
+%% End of file `nikheftheme.sty'.

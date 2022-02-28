@@ -1,0 +1,30 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{subcaption}
+\usepackage{bibentry}
+
+\usepackage{nikheftheme}
+
+\title{Example Frontpage}
+\author{Author Name}
+\institute{Nikhef}
+\date{28-02-2021}
+
+\begin{document}
+
+{
+\usebackgroundtemplate
+{\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{theme/frontpage.pdf}}
+\frame{\titlepage}
+}
+
+\begin{frame}{\textbf{Example Frame}}
+
+    \begin{itemize}
+        \item Example Frame
+    \end{itemize}
+
+\end{frame}
+
+\end{document}
